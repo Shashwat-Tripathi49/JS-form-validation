@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+      /* ======== RESET & BASE ======== */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #333;
+      }
+
+      /* ======== FORM CONTAINER ======== */
+      .form-container {
+        background: rgba(255, 255, 255, 0.15);  
+        backdrop-filter: blur(12px);
+        padding: 50px 60px;
+        border-radius: 25px;
+        width: 450px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+        color: #fff;
+      }
+
+      .form-container h2 {
+        text-align: center;
+        margin-bottom: 35px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        color: #fff;
+        font-size: 26px;
+      }
+
+      /* ======== INPUT FIELDS ======== */
+      label {
+        display: block;
+        margin: 15px 0 6px;
+        font-size: 15px;
+        color: #f5f5f5;
+        letter-spacing: 0.3px;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 14px 16px;
+        border-radius: 12px;
+        border: none;
+        outline: none;
+        background: rgba(255, 255, 255, 0.85);
+        font-size: 16px;
+        color: #333;
+        transition: all 0.3s ease;
+      }
+
+      input:focus,
+      select:focus {
+        background: #fff;
+        box-shadow: 0 0 0 3px #a777e3;
+      }
+
+      /* ======== CHECKBOX ======== */
+      .checkbox-group {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 14px;
+      }
+
+      .checkbox-group input {
+        width: 20px;
+        height: 20px;
+      }
+
+      /* ======== ERROR MESSAGES ======== */
+      .error {
+        color: #ff4d4d;
+        font-size: 13px;
+        margin-top: 4px;
+      }
+
+      /* ======== SUBMIT BUTTON ======== */
+      button {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #43e97b, #38f9d7);
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 25px;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      }
+
+      /* ======== SMALL DETAILS ======== */
+      ::placeholder {
+        color: #666;
+      }
+
+      select {
+        appearance: none;
+        cursor: pointer;
+      }
+
+      .footer {
+        text-align: center;
+        font-size: 13px;
+        margin-top: 20px;
+        opacity: 0.9;
+        letter-spacing: 0.5px;
+      }
+
+      @media (max-width: 520px) {
+        .form-container {
+          width: 90%;
+          padding: 40px 30px;
+        }
+
+        .form-container h2 {
+          font-size: 22px;
+        }
+
+        input,
+        select,
+        button {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form id="registrationForm" class="form-container">
+      <h2>Register Here</h2>
+
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="John Doe" />
+      <span class="error" id="nameError"></span>
+      <!-- JS Hint: Check if name is not empty and has at least 3 characters -->
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="example@email.com" />
+      <span class="error" id="emailError"></span>
+      <!-- JS Hint: Validate email format using regex -->
+ <label for="phone">PHONE NUMBER</label>
+      <input type="number" id="phone" placeholder="XXXXXXXXXX" />
+      <span class="error" id="phoneError"></span>
+      <!-- JS Hint: Check if name is not empty and has at least 3 characters -->
+
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter a strong password"
+      />
+      <span class="error" id="passwordError"></span>
+      <!-- JS Hint: Password must contain at least 6 characters, 1 number, and 1 uppercase letter -->
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input
+        type="password"
+        id="confirmPassword"
+        placeholder="Re-enter password"
+      />
+      <span class="error" id="confirmError"></span>
+      <!-- JS Hint: Must match with 'password' -->
+
+      <label for="gender">Gender</label>
+      <select id="gender">
+        <option value="">Select</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <span class="error" id="genderError"></span>
+      <!-- JS Hint: Ensure gender is selected -->
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="terms" />
+        <label for="terms" style="margin: 0"
+          >I agree to the Terms & Conditions</label
+        >
+      </div>
+      <span class="error" id="termsError"></span>
+      <!-- JS Hint: Ensure checkbox is checked -->
+
+      <button type="submit">Submit</button>
+      <div class="footer">Learn JavaScript Form Validation 🚀</div>
+    </form>
+
+    
+<script src="script.js"></script>
+
+    
+  </body>
+</html>
